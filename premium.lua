@@ -1189,7 +1189,7 @@ local farmKeybind = createBindForToggle(farmToggle, "autofarm ", "F", "FarmKeybi
 local hitboxKeybind = createBindForToggle(hitboxToggle, "hitbox", "H", "HitboxKeybind")
 local espKeybind = createBindForToggle(espToggle, "Name ESP", "E", "EspKeybind")
 local chamsKeybind = createBindForToggle(chamsToggle, "Chams", "C", "ChamsKeybind")
-local nevidimostKeybind = createBindForToggle(nevidimostToggle, "Невидимость", "G", "NevidimostKeybind")
+local nevidimostKeybind = createBindForToggle(nevidimostToggle, "invisibility", "G", "NevidimostKeybind")
 
 local function onCharacterAdded(character)
     if noclipEnabled then
@@ -1296,4 +1296,4 @@ game:BindToClose(function()
     end
 end)
 
-print("vetrex scripts v1.5 test version !")
+print("vetrex scripts test version !")
