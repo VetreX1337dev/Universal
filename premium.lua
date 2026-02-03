@@ -1,11 +1,11 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "BYW ScriptX - UNIVERSAL MENU",
+    Name = "VETREX HUB - TEST MENU",
     Icon = 0,
-    LoadingTitle = "BYW LoaderX",
-    LoadingSubtitle = "BYW DEVELOPER",
-    ShowText = "BYW",
+    LoadingTitle = "vetrex",
+    LoadingSubtitle = "vetrex test functions",
+    ShowText = "test",
     Theme = "Default",
     ToggleUIKeybind = "K",
     DisableRayfieldPrompts = false,
@@ -18,21 +18,21 @@ local Window = Rayfield:CreateWindow({
     Discord = {},
     KeySystem = true,
     KeySettings = {
-        Title = "BYW Access System",
-        Subtitle = "Система доступа",
-        Note = "Требуется ключ активации",
-        FileName = "BYWKey",
+        Title = "Vetrex Key System",
+        Subtitle = "key here-https://discord.gg/xSkFSKmAgp",
+        Note = "you need a key",
+        FileName = "VetrexKey",
         SaveKey = true,
         GrabKeyFromSite = false,
-        Key = {"BYW DEV"}
+        Key = {"vetrex"}
     }
 })
 
-local MainTab = Window:CreateTab("Главная", 4483362458)
+local MainTab = Window:CreateTab("Home", 4483362458)
 
 MainTab:CreateParagraph({
-    Title = "BYW ScriptX",
-    Content = "Добро пожаловать в BYW SCRIPT! В скрипте собраны все универсальные функции, которые подходят для каждой игры.\n\nРазработчик: BYW DEVELOPER"
+    Title = "vetrex test hub",
+    Content = "Welcome to test version of the script from vetrex scripts! This script contains all the universal functions suitable for any game,The script contains test functions that will be added or improved in the next version of the script (Vetrex v1.5)...\n\nDevelober: vetrex.zyx"
 })
 
 local stretchEnabled = false
@@ -66,7 +66,7 @@ local function disableStretch()
 end
 
 local stretchToggle = MainTab:CreateToggle({
-    Name = "Растяг 4:3",
+    Name = "4:3",
     CurrentValue = false,
     Flag = "StretchToggle",
     Callback = function(Value)
@@ -345,7 +345,7 @@ game.Players.PlayerRemoving:Connect(function(player)
     removeChams(player)
 end)
 
-local FarmTab = Window:CreateTab("Фарм", 4483362458)
+local FarmTab = Window:CreateTab("farm", 4483362458)
 
 local blocks = {}
 local blockCount = 0
@@ -355,12 +355,12 @@ local currentBlockIndex = 1
 local farmConnection
 local isWaiting = false
 
-local blockCountLabel = FarmTab:CreateLabel("Блоков: 0")
+local blockCountLabel = FarmTab:CreateLabel("Blocks: 0")
 
 local function updateBlockCount()
     if blockCountLabel then
         pcall(function()
-            blockCountLabel:Set("Блоков: " .. #blocks)
+            blockCountLabel:Set("Blocks: " .. #blocks)
         end)
     end
 end
@@ -382,7 +382,7 @@ pcall(function()
 end)
 
 FarmTab:CreateSlider({
-    Name = "Скорость фарма",
+    Name = "Farming speed",
     Range = {1, 100},
     Increment = 1,
     Suffix = "ед.",
@@ -394,7 +394,7 @@ FarmTab:CreateSlider({
 })
 
 FarmTab:CreateButton({
-    Name = "Добавить блок",
+    Name = "Add a block",
     Callback = function()
         local character = game.Players.LocalPlayer.Character
         if not character then return end
@@ -419,7 +419,7 @@ FarmTab:CreateButton({
 })
 
 FarmTab:CreateButton({
-    Name = "Удалить последний блок",
+    Name = "Delete the last block",
     Callback = function()
         if #blocks > 0 then
             local lastBlock = table.remove(blocks)
@@ -430,7 +430,7 @@ FarmTab:CreateButton({
 })
 
 FarmTab:CreateButton({
-    Name = "Удалить все блоки",
+    Name = "Delete all blocks",
     Callback = function()
         for i = #blocks, 1, -1 do
             blocks[i]:Destroy()
@@ -513,7 +513,7 @@ local function stopAutoFarm()
 end
 
 local farmToggle = FarmTab:CreateToggle({
-    Name = "Авто фарм",
+    Name = "AutoFarm",
     CurrentValue = false,
     Flag = "AutoFarmToggle",
     Callback = function(Value)
@@ -529,7 +529,7 @@ local farmToggle = FarmTab:CreateToggle({
     end,
 })
 
-local UtilityTab = Window:CreateTab("Утилиты", 4483362458)
+local UtilityTab = Window:CreateTab("Utilities", 4483362458)
 
 local fpsBoostEnabled = false
 local fpsBoostOriginalSettings = {}
@@ -692,7 +692,7 @@ local function clip()
 end
 
 local noclipToggle = UtilityTab:CreateToggle({
-    Name = "Ноклип",
+    Name = "Noclip",
     CurrentValue = false,
     Flag = "NoclipToggle",
     Callback = function(Value)
@@ -979,7 +979,7 @@ local function stopESP()
 end
 
 local hitboxToggle = UtilityTab:CreateToggle({
-    Name = "Увеличить хитбокс",
+    Name = "Increase hitbox",
     CurrentValue = false,
     Flag = "HitboxToggle",
     Callback = function(Value)
@@ -996,7 +996,7 @@ local hitboxToggle = UtilityTab:CreateToggle({
 })
 
 UtilityTab:CreateInput({
-    Name = "Размер хитбокса",
+    Name = "Hitbox size",
     PlaceholderText = "20",
     RemoveTextAfterFocusLost = false,
     Callback = function(Text)
@@ -1155,7 +1155,7 @@ local function toggleNevidimost()
 end
 
 local nevidimostToggle = UtilityTab:CreateToggle({
-    Name = "Невидимость",
+    Name = "Invisibility",
     CurrentValue = false,
     Flag = "NevidimostToggle",
     Callback = function(Value)
@@ -1165,7 +1165,7 @@ local nevidimostToggle = UtilityTab:CreateToggle({
     end,
 })
 
-local BindsTab = Window:CreateTab("Бинды", 4483362458)
+local BindsTab = Window:CreateTab("binders", 4483362458)
 
 local function createBindForToggle(toggle, name, defaultKey, flag)
     local keybind = BindsTab:CreateKeybind({
@@ -1184,9 +1184,9 @@ local function createBindForToggle(toggle, name, defaultKey, flag)
     return keybind
 end
 
-local noclipKeybind = createBindForToggle(noclipToggle, "Ноклип", "N", "NoclipKeybind")
-local farmKeybind = createBindForToggle(farmToggle, "Авто фарм", "F", "FarmKeybind")
-local hitboxKeybind = createBindForToggle(hitboxToggle, "Хитбокс", "H", "HitboxKeybind")
+local noclipKeybind = createBindForToggle(noclipToggle, "Noclip", "N", "NoclipKeybind")
+local farmKeybind = createBindForToggle(farmToggle, "autofarm ", "F", "FarmKeybind")
+local hitboxKeybind = createBindForToggle(hitboxToggle, "hitbox", "H", "HitboxKeybind")
 local espKeybind = createBindForToggle(espToggle, "Name ESP", "E", "EspKeybind")
 local chamsKeybind = createBindForToggle(chamsToggle, "Chams", "C", "ChamsKeybind")
 local nevidimostKeybind = createBindForToggle(nevidimostToggle, "Невидимость", "G", "NevidimostKeybind")
@@ -1296,4 +1296,4 @@ game:BindToClose(function()
     end
 end)
 
-print("BYW ScriptX loaded!")
+print("vetrex scripts v1.5 test version !")
